@@ -1,6 +1,7 @@
 import './App.css';
 import Die from './Die.js';
 import Title from './Title.js';
+import Num from './NumeroComp.js';
 
 function App() {
 	return (  
@@ -11,6 +12,7 @@ function App() {
 		<Die />
 		<Die />
 	</main>
+	<Num />
 	</div>
 	);
 }
