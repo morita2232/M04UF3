@@ -1,18 +1,30 @@
 import './Die.css';
 import { useState } from 'react';
 
-function Die() {
+function Die(props) {
 	
-	let [number, setNumber] = useState(1);
+	let [number, setNumber] = useState("-");
+	
+	let [roll, setRoll] = useState(false);
 
-	function roll()
+	function get_random()
 	{
-		let randomNum = Math.floor(Math.random() * 6) +1;
-		setNumber(randomNum);
+		return Math.floor(Math.random() * 6) +1;
+	}	
+	
+	function set_random () {
+		let r = get_random();
+		setNumber(r);
 	}
 
+	if (props.roll){
+		number = get_random();
+	}
+
+
+
 	return (
-	<button className="Die" onClick={roll}>
+	<button className="Die" onClick={set_random}>
 		<p className="DieNumber">{number}</p>
 	</button>
 	);

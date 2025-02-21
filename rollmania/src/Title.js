@@ -1,10 +1,10 @@
 import './Title.css';
 
 
-function Title() {
+function Title(nombre) {
 	return (
 	<header className="Title">
-		<h1>ROLLMANIA</h1>
+		<h1>{nombre.titulo}</h1>
 	</header>
 	);
 }
