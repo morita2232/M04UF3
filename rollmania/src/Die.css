@@ -1,8 +1,7 @@
-.Die {
-	font-weight:bold;
+.Die {	
 	justify-content:center;
 	align-items:center;
-	text-align:center;
+	font-weight:bold;
 	font-size:48px;
 	width:128px;
 	height:128px;
