@@ -4,6 +4,7 @@ import Title from './Title.js';
 import Num from './NumeroComp.js';
 import Roll from './RollButton.js';
 import Score from './Scores.js';
+import Player from './Playername.js';
 
 import { useState } from 'react';
 
@@ -19,11 +20,12 @@ function roll_dice () {
 	<div className="rollmania">
 	<Num />
 	<Title titulo="ROLLMANIA" />
+	<Player />
 	<main className="App">
 	<Dice cantidad="5" roll={roll}  />
 	</main>
 	<Roll roll_func={roll_dice}/>
-	<Score />
+	<Score nombre=playerName/>
 	</div>
 	);
 }

@@ -1,12 +1,12 @@
 import './Scores.css';
 
 
-function Scores() {
+function Scores(props) {
 	return (
 	<div className="Scores">
 		<h2>SCORES</h2>
 		<ol>
-			<li>Hola</li>
+			<li>props.playerName</li>
 		</ol>
 	</div>
 	);
