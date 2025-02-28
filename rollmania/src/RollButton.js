@@ -31,11 +31,11 @@ function handleClick() {
 	<button 
 		className="Roll" 
 			onClick={handleClick}
-				disabled={countdown > 0 ? "true" : ""}
+				disabled={countdown > 0 ? true : ""}
 				>
 		<p>
 			{countdown === null
-				? "ROLL THEM DICE"
+				? "ROLL THEM DICE"  
 				: countdown > 0
 				? countdown
 				: "ROLL!!!"}

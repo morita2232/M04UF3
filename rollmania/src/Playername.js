@@ -1,15 +1,62 @@
 import './Playername.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-function Playername(nombre) {
+function Playername(props) {
 	let [player_name, setPlayername] = useState("");
+	let [show_name, setShowname] = useState(false);
+	
+	useEffect( () => {
+		
+		if (show_name){
+		props.onPlayerNameChange(player_name);
+		}
 
+	});
+
+	function update_name (event) {
+	
+		setPlayername(event.target.value);
+		
+	}
+	
+	function write_name () {
+
+	let pn_tmp = player_name.trim();
+
+		if(pn_tmp.length < 3 || pn_tmp > 12) {
+			
+			return;
+
+			}
+		else {
+			
+			setShowname(true);
+
+		}
+
+		console.log("Nombre: " + player_name);
+
+	}
+
+
+	if (show_name == false){
 	return (
-	<div>
-		<p classname="Playername"> <input type="text" value={player_name} onChange={e => setPlayername(e.target.value)} /> <button> Guardar </button> </p>
-	</div>
+		
+		<p className="Playername"> <input type="text" name="player_name" placeholder="Nombre del jugad@r" onChange={update_name} /> <button onClick={write_name}> Guardar </button> </p>
 
 	);
+		
+	}
+
+	else{
+	
+	return (
+	
+	<h2 className="Playername"> Jugad@r: {player_name} </h2>
+	
+	);
+	
+	}
 }
 
 export default Playername;
