@@ -3,34 +3,21 @@ import { useState, useEffect } from 'react';
 
 function RollButton(props) {
 
-let [countdown, setCountdown] = useState(null);
+let [countdown, setCountdown] = useState(5);
 
-useEffect(function() {
-	if (countdown === 0){
-		let timeout = setTimeout(function () {
-			props.roll_func();
-			setCountdown(null);
+useEffect(() => {
+	setTimeout(() => {
+		if(countdown > 0) {
+			setCountdown(countdown - 1);
+			}
 		}, 1000);
-		return function() {clearTimeout(timeout);};
-	}
+	});
 
-	if (countdown > 0) {
-		let interval = setInterval(function() {
-			setCountdown(function(prev) {
-			return prev - 1;
-		});
-	}, 1000);
-		return function() {clearInterval(interval); };
-	}
-}, [countdown, props.roll_func]);
 
-function handleClick() {
-	setCountdown(5);
-}
 	return (
 	<button 
 		className="Roll" 
-			onClick={handleClick}
+			onClick={props.roll_func}
 				disabled={countdown > 0 ? true : ""}
 				>
 		<p>

@@ -41,9 +41,10 @@ function Playername(props) {
 
 	if (show_name == false){
 	return (
-		
-		<p className="Playername"> <input type="text" name="player_name" placeholder="Nombre del jugad@r" onChange={update_name} /> <button onClick={write_name}> Guardar </button> </p>
-
+		<p>
+		<input type="text" name="player_name" placeholder="Nombre del jugad@or" onChange={update_name} />
+		<button onClick={write_name}>Guardar</button>
+	</p>
 	);
 		
 	}
@@ -52,7 +53,7 @@ function Playername(props) {
 	
 	return (
 	
-	<h2 className="Playername"> Jugad@r: {player_name} </h2>
+	<h2 className="Playername">{player_name} </h2>
 	
 	);
 	
